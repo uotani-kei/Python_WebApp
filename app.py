@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 app = Flask(__name__)
 @app.route('/')
 def inex():
@@ -16,3 +16,15 @@ def test_request():
 def x_request(user):
     return f'x_request:{user}'
 
+@app.route('/show_html')
+def show_html():
+    return render_template('test_html.html')
+
+@app.route('/exe_html')
+def exe_html():
+    return render_template('exercise.html')
+
+@app.route('/exercise')
+def my_html():
+    s = request.args.get("my_name")
+    return s
