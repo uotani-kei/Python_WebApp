@@ -38,3 +38,11 @@ def try_rest():
     print(name)
     response_json = {"response_json": request_json}
     return jsonify(response_json)
+
+@app.route('/try_html')
+def try_html():
+    return render_template('try_html.html')
+
+@app.route('/show_data', methods=["GET", "POST"])
+def show_data():
+    return request.form
