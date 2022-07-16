@@ -1,0 +1,35 @@
+docker -v
+バージョン表示
+
+docker build --tag webapp-docker .
+イメージの作成
+
+docker images
+イメージの一覧表示
+
+docker tag webapp-docker:latest webapp-docker:v1.0.0
+イメージのタグ付け
+
+docker rmi webapp-docker:v1.0.0
+イメージの削除
+
+docker run webapp-docker
+コンテナの起動
+
+docker run --publish 8000:5000 webapp-docker
+PORTを指定してのコンテナの起動
+
+docker ps
+起動しているコンテナの表示
+
+docker run -d -p 8000:5000 webapp-docker
+バックグラウンドでコンテナを起動
+
+docker stop condescending_mayer
+コンテナの停止
+
+docker ps -a
+すべてのコンテナの表示
+
+docker restart gallant_neumann
+コンテナの再起動
